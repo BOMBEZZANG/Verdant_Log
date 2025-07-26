@@ -1,0 +1,86 @@
+Game Design Document (GDD): Project Verdant Log (MVP)
+1. Game Overview
+Working Title: Project: Verdant Log
+
+Genre: Botanical Exploration, Puzzle, Lite RPG
+
+Elevator Pitch: Explore a mysterious world to discover rare seeds and environmental clues. Solve cultivation puzzles in your greenhouse to grow unique flora, level up your skills, and unlock new, exotic biomes to investigate.
+
+Target Audience: Players who enjoy relaxing exploration, collection, and puzzle-solving, similar to games like Stardew Valley (the farming/collection aspect), Apico, or the non-combat elements of Terraria.
+
+Core Player Fantasy: To be a dedicated field researcher and master botanist, driven by curiosity and the thrill of discovery, not by narrative or combat.
+
+2. Core Design Pillars
+Mechanics-Driven Progression: The player’s motivation is purely systemic. The goal is to gain EXP, level up, and unlock new game mechanics and areas. All features must serve this mechanical growth.
+
+Exploration Meets Experimentation: The gameplay is a tight loop between two distinct phases: the adventure of exploring the outside world to find seeds/clues, and the puzzle-like satisfaction of using those clues to cultivate new life in a controlled environment.
+
+Collection is Power: Every new plant discovered is a tangible step forward. The primary reward for collection is not wealth or story, but the direct enhancement of the player's ability to explore further. The Log (Encyclopedia) is the key to progression.
+
+3. The Core Gameplay Loop
+This loop is the fundamental structure of the game.
+
+EXPLORE: The player traverses a biome to find new seeds, discover environmental clues (e.g., ancient carvings, unique soil types), and gather basic materials.
+
+EXPERIMENT & CULTIVATE: The player returns to their Hub (Greenhouse/Lab) and plants a seed. Using the clues they gathered, they must apply the correct conditions (e.g., plant at night, use a specific fertilizer, place next to another plant) to successfully grow the plant. This is the core puzzle.
+
+HARVEST & GROW: A successful cultivation yields a large amount of Experience Points (EXP) and sometimes special, rare materials. The new plant is automatically logged in the Encyclopedia.
+
+UNLOCK: Gaining EXP leads to leveling up. Reaching certain level milestones is the primary trigger for unlocking new explorable biomes or new core abilities/tools (e.g., a lantern to enter dark caves).
+
+REPEAT: The player uses their newly unlocked access or ability to explore a new area, find even rarer seeds and more complex clues, and begin the loop again.
+
+4. MVP Feature Set (Scope for Initial Release)
+4.1. Core Systems
+Player Controller: Basic movement (walk, run), single-button context-sensitive interaction (gather, inspect).
+
+Inventory System: A simple, grid-based inventory to hold seeds and materials.
+
+Progression System: A Level and EXP system. Player level is the primary gate for content.
+
+World System:
+
+A single, static Player Hub (the "Greenhouse" or "Lab") for all cultivation.
+
+Distinct, unlockable Exploration Zones ("Biomes").
+
+A functional Day/Night cycle, as it is a core condition for cultivation.
+
+Cultivation System: A logic-based system where a seed's outcome is determined by a combination of applied conditions. This is the central puzzle mechanic.
+
+Unlock System: A clear system where reaching a specific Level unlocks access to a new Biome or a new character ability/tool.
+
+4.2. Core Content
+Plants/Mushrooms: A total of 20-30 unique species to discover and cultivate for the initial release.
+
+Materials: A small number of essential materials used for meeting cultivation conditions (e.g., 3-4 types of special fertilizer).
+
+Abilities/Tools: 2-3 essential, progression-gated tools that open up new exploration paths (e.g., Machete for dense vines, Lantern for dark areas).
+
+Exploration Zones: The Player Hub plus 3 distinct biomes (e.g., Forest → Cave → Swamp).
+
+4.3. Core UI (User Interface)
+The Log (Encyclopedia): The most important UI screen. Displays collected plants, their stats/properties, and any discovered hints for unknown plants.
+
+EXP / Level Bar: A constantly visible bar showing progress to the next level.
+
+Inventory Screen: A screen to view and manage collected items.
+
+Planting/Crafting UI: A minimal interface for planting seeds in the Hub and crafting the few essential progression tools.
+
+5. Features EXCLUDED from MVP (Post-Launch Candidates)
+To guarantee a finished product, the following features will be intentionally excluded from the initial release.
+
+❌ Economy System: No currency, shops, or selling of plants.
+
+❌ Survival Mechanics: No health, hunger, thirst, or stamina management.
+
+❌ Complex Story & NPCs: No deep narrative, dialogue trees, or extensive quests. Environmental clues (murals, item descriptions) are sufficient.
+
+❌ Base/Character Customization: No cosmetic options.
+
+❌ Extensive Crafting System: Crafting is strictly limited to the 2-3 essential progression tools. No furniture, food, or decorative items.
+
+❌ Combat: No enemies or combat mechanics.
+
+This document defines the complete scope for the initial, releasable version of Project: Verdant Log. All development effort should be focused on implementing these core features to create a polished and complete gameplay loop.

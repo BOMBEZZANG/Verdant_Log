@@ -1,0 +1,101 @@
+Technical Development Request: "Project Verdant Log" - Phase 1 Core Systems**
+
+### **1. Introduction & Project Overview**
+
+This document outlines the foundational systems required for a new game, "Project: Verdant Log" (working title).
+
+The game is a **2D Botanical Exploration-Puzzle game with Lite RPG elements**. The core gameplay loop involves the player **exploring** different environments to find rare seeds and clues, **returning to a central hub (a Greenhouse) to cultivate** these seeds under specific experimental conditions, and **harvesting** the resulting unique plants to gain Experience Points (EXP). Gaining EXP leads to **leveling up**, which in turn **unlocks new regions to explore** and new abilities, creating a self-sustaining loop of discovery and growth.
+
+This project is **mechanics-driven**, not story-driven. All systems should be built with scalability and data-driven design in mind.
+
+### **2. Goal of This Document**
+
+The objective of this task is to develop the five core, interconnected backend systems required for the **Phase 1 milestone**. This phase will feature a complete, polished gameplay loop from Level 1 to 5, including two fully explorable zones. The systems built now must be robust and scalable enough to support the entire game's content later without major architectural changes.
+
+### **3. Foundational Data Structures**
+
+Before detailing the systems, please use the following data structures as the backbone of the project. Using Scriptable Objects in Unity or a similar data-centric approach is highly recommended.
+
+```csharp
+// Represents a single unique item, plant, or material in the game.
+public struct ItemData {
+    public string itemID; // e.g., "seed_basic", "mat_crystal_dust"
+    public string itemName;
+    public string description;
+    public Sprite icon;
+    public bool isStackable;
+    public int maxStackSize;
+    // ... other generic fields
+}
+
+// Represents a specific type of plant that can be grown.
+public struct PlantData {
+    public string plantID; // This will also be its itemID when harvested.
+    public string plantName;
+    public Sprite[] growthStageSprites; // Sprites for each stage of growth
+    public int expValue; // EXP gained when successfully harvested for the first time
+    public string materialYieldID; // ItemID of material yielded on harvest
+    public int materialYieldAmount;
+    // ... other plant-specific fields
+}
+```
+
+### **4. Required Systems for Development (Phase 1)**
+
+#### **4.1. Inventory & Item Database System**
+
+  * **Goal:** To manage all items the player possesses and to serve as a central database for all item definitions.
+  * **Required Functionality:**
+      * A persistent `Inventory` class that holds a collection of items (`itemID` and `quantity`).
+      * A global `ItemDatabase` that can be queried to get `ItemData` from an `itemID`.
+      * Standard functions: `Inventory.AddItem(itemID, quantity)`, `Inventory.RemoveItem(itemID, quantity)`, `Inventory.HasItem(itemID, quantity)`.
+  * **Events & API:**
+      * The Inventory system must fire a global event, `OnInventoryUpdated()`, whenever its contents change. This will be used by the UI to redraw.
+      * Expose a clear API for other systems to query the player's inventory.
+
+#### **4.2. Cultivation Condition System**
+
+  * **Goal:** To act as the core puzzle engine of the game. It must determine the outcome of planting a seed based on a set of data-driven rules. This system MUST be scalable.
+  * **Required Functionality:**
+      * The system should be based on "Recipes". A `CultivationRecipe` would define a successful combination (e.g., `InputSeedID` + `RequiredConditions[]` = `OutputPlantID`).
+      * The system must support multiple, combinable condition types. For Phase 1, it must support:
+        1.  **Time of Day:** e.g., `Requires: Night`
+        2.  **Item Used:** e.g., `Requires: Use of item "mat_crystal_dust" on the plot.`
+        3.  **Adjacency:** (System must be ready for this, but no recipes will use it in Phase 1) e.g., `Requires: Adjacent plant of type "plant_fireblossom"`.
+      * A central function, e.g., `CultivationManager.AttemptCultivation(plotObject, itemUsedOnPlot)`, which checks all recipes against the current state of the world and the plot.
+  * **Events & API:**
+      * Must fire a global event `OnCultivationSuccess(plantID, expValue)` when a new plant is successfully grown.
+      * Must provide feedback for `OnCultivationFail()` if conditions are not met.
+
+#### **4.3. Player Progression System**
+
+  * **Goal:** To manage the player's level and experience points, acting as the primary driver for all unlocks.
+  * **Required Functionality:**
+      * A `PlayerStats` class to store `currentLevel`, `currentEXP`.
+      * A data-driven EXP curve (e.g., an array `int[] expToNextLevel`) that defines the EXP required for each level up. Plan for Levels 1-10 initially.
+      * A public function `PlayerStats.AddEXP(amount)`. This function will handle all logic for adding EXP and checking if a level-up has occurred.
+  * **Events & API:**
+      * Must fire a global event `OnPlayerLevelUp(newLevel)` when the player levels up. This is critical for the World & Unlock System.
+      * Should fire an event `OnEXPChanged(currentEXP, requiredEXP)` for UI updates.
+
+#### **4.4. World & Unlock System**
+
+  * **Goal:** To manage the player's access to different game scenes (zones/biomes) based on their progression.
+  * **Required Functionality:**
+      * A `WorldManager` or similar global class to maintain the state of all unlockable zones (e.g., `Dictionary<string, bool> unlockedZones`).
+      * A data structure that maps unlock triggers to zones (e.g., "Level 5 unlocks `scene_CrystalCave`").
+      * The system must listen for the `OnPlayerLevelUp` event from the Player Progression System. When the event is received, it will check the unlock data and update the state of the corresponding zone.
+      * Physical gates/blockers in the game scenes must query this system (e.g., `WorldManager.IsZoneUnlocked("scene_CrystalCave")`) to determine if they should be open or closed.
+
+#### **4.5. Encyclopedia ("Log") System**
+
+  * **Goal:** To act as a persistent database of all plants the player has successfully discovered.
+  * **Required Functionality:**
+      * The system must maintain a list of all `plantID`s that have been discovered (e.g., `HashSet<string> discoveredPlants`).
+      * A public function `Log.UnlockEntry(plantID)` to add a new plant to the discovered list.
+      * A public function `Log.IsDiscovered(plantID)` for other systems or UI to query.
+  * **Events & API:**
+      * This system must listen for the `OnCultivationSuccess` event from the Cultivation System. Upon receiving the event, it will call its `UnlockEntry()` function with the corresponding `plantID`.
+      * The UI will heavily rely on the API of this system to draw the encyclopedia, showing discovered entries and hints for undiscovered ones.
+
+Please begin by architecting these five systems to be robust and data-driven. The successful implementation of this backend framework is the primary goal of Phase 1. Let me know if you have any questions or require further clarification on any of these points.
