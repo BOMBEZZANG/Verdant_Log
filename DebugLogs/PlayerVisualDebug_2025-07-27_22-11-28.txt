@@ -1,0 +1,52 @@
+==============================================
+Debug Log Started: 2025-07-27 22:11:28
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Project: Verdant_Log
+==============================================
+
+[22:11:28.473] [LOG    ] === Player Visual Diagnosis ===
+[22:11:28.473] [WARNING] Visual object not found! Creating one...
+[22:11:28.474] [LOG    ] SpriteRenderer not found on Visual object!
+[22:11:28.474] [LOG    ] Added SpriteRenderer component
+[22:11:28.474] [LOG    ] No sprite assigned to SpriteRenderer!
+[22:11:28.474] [LOG    ] Assigned debug sprite
+[22:11:28.475] [LOG    ] Sorting Layer: Default (ID: 0)
+[22:11:28.475] [LOG    ] Order in Layer: 0
+[22:11:28.475] [LOG    ] Fixed sorting layer settings
+[22:11:28.475] [LOG    ] Sprite Color: RGBA(1.000, 1.000, 1.000, 1.000)
+[22:11:28.476] [LOG    ] Visual Scale: (1.00, 1.00, 1.00)
+[22:11:28.477] [LOG    ] Player Position: (498.10, 273.68, -0.65)
+[22:11:28.477] [LOG    ] Camera Position: (0.00, 0.00, -10.00)
+[22:11:28.477] [LOG    ] Camera Size: 5
+[22:11:28.477] [LOG    ] Player in viewport: (28.52, 27.84, 9.35)
+[22:11:28.477] [LOG    ] Player is outside camera view!
+[22:11:28.477] [LOG    ] Moved player to camera center
+[22:11:28.477] [LOG    ] Player Z (-0.6506602) is behind or at camera Z (-10)!
+[22:11:28.477] [LOG    ] Fixed player Z position
+[22:11:28.477] [LOG    ] PlayerController found and active
+[22:11:28.477] [LOG    ] === Diagnosis Complete ===
+
+==============================================
+Debug Log Ended: 2025-07-27 22:11:28
+==============================================
+
+==============================================
+Debug Log Ended: 2025-07-27 22:11:29
+==============================================
+
+==============================================
+Debug Log Ended: 2025-07-27 22:11:29
+==============================================
+
+==============================================
+Debug Log Ended: 2025-07-27 22:11:40
+==============================================
+
+==============================================
+Debug Log Ended: 2025-07-27 22:11:52
+==============================================
+
+==============================================
+Debug Log Ended: 2025-07-27 22:11:52
+==============================================

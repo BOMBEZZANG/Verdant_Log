@@ -140,6 +140,11 @@ namespace VerdantLog.Systems
         {
             InitializeRecipes();
         }
+        
+        public void TriggerCultivationSuccess(string plantID, int expValue)
+        {
+            OnCultivationSuccess?.Invoke(plantID, expValue);
+        }
     }
     
     public class CultivationResult

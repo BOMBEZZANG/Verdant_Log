@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.InputSystem;
 using VerdantLog.Core;
 using VerdantLog.Systems;
 
@@ -16,8 +15,6 @@ namespace VerdantLog.UI
         [SerializeField] private GameObject itemSlotPrefab;
         [SerializeField] private TextMeshProUGUI slotsText;
         
-        [Header("Input")]
-        [SerializeField] private InputActionReference toggleInventoryAction;
         
         private List<GameObject> itemSlots = new List<GameObject>();
         
@@ -28,39 +25,30 @@ namespace VerdantLog.UI
                 
             GameEvents.OnInventoryUpdated += RefreshInventory;
             RefreshInventory();
-            
-            if (toggleInventoryAction != null)
-            {
-                toggleInventoryAction.action.performed += OnToggleInventory;
-                toggleInventoryAction.action.Enable();
-            }
         }
         
         private void OnDestroy()
         {
             GameEvents.OnInventoryUpdated -= RefreshInventory;
-            
-            if (toggleInventoryAction != null)
-            {
-                toggleInventoryAction.action.performed -= OnToggleInventory;
-                toggleInventoryAction.action.Disable();
-            }
         }
         
-        private void OnToggleInventory(InputAction.CallbackContext context)
-        {
-            ToggleInventory();
-        }
         
         public void ToggleInventory()
         {
+            Debug.Log("InventoryUI: ToggleInventory() called");
             if (inventoryPanel != null)
             {
-                inventoryPanel.SetActive(!inventoryPanel.activeSelf);
+                bool newState = !inventoryPanel.activeSelf;
+                inventoryPanel.SetActive(newState);
+                Debug.Log($"InventoryUI: Panel set to {(newState ? "active" : "inactive")}");
                 if (inventoryPanel.activeSelf)
                 {
                     RefreshInventory();
                 }
+            }
+            else
+            {
+                Debug.LogWarning("InventoryUI: inventoryPanel is null!");
             }
         }
         

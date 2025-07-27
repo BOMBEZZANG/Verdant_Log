@@ -1,0 +1,83 @@
+Implementation of a Modular Player Controller and Interaction System
+
+1. Overview & Goal
+This document outlines the requirements for developing the core player character system. Our project currently has a robust and well-decoupled architecture, with systems for Inventory, Cultivation, Player Stats, and Time, all communicating via a central GameEvents manager.
+
+The next logical step is to introduce a physical player character that the user can control to navigate the game world and interact with its various systems. The primary goal is to implement this functionality while strictly adhering to our existing architectural principles of modularity and event-driven communication.
+
+2. Core Components to Be Developed
+We have identified three essential scripts that will form the foundation of this system.
+
+a. PlayerController.cs
+
+Responsibility: Solely responsible for player movement and physics.
+
+Functionality:
+
+Read user input (e.g., WASD, arrow keys) for movement.
+
+Apply forces to a Rigidbody2D/3D component to move the character.
+
+Manage basic movement states (e.g., idle, walking, running).
+
+This component should have no knowledge of game systems like Inventory or Encyclopedia.
+
+b. PlayerInteractor.cs
+
+Responsibility: Detect and initiate interactions with world objects.
+
+Functionality:
+
+Use a trigger collider or raycasting to detect nearby objects that have an Interactable component.
+
+When the user presses the interaction key (e.g., 'E'), it should call a method on the detected Interactable component (e.g., Interactable.TriggerInteraction()).
+
+Crucially, this script should not know what the interaction does. It only knows how to trigger it.
+
+c. Interactable.cs
+
+Responsibility: A generic, reusable component to be placed on any game object that the player can interact with (e.g., plants, NPCs, doors, signs).
+
+Functionality:
+
+Acts as a "tag" to identify interactable objects.
+
+It will contain a public method (e.g., TriggerInteraction()) that can be configured in the Unity Editor to fire off specific events or call methods on other scripts attached to the same object.
+
+For example, on a harvestable plant, this script's TriggerInteraction() method would be responsible for calling CultivationManager to process the harvest. On an NPC, it would trigger a dialogue system.
+
+3. Required Enhancements for User Experience
+To ensure the system feels polished and intuitive, the following features should be developed alongside the core components.
+
+a. Animation Control Logic (To be integrated into PlayerController.cs)
+
+Responsibility: Drive the player's animations based on their state.
+
+Functionality:
+
+The PlayerController must interface with the Animator component on the player's prefab.
+
+It should set animator parameters based on the player's movement state (e.g., set an isWalking boolean to true/false), triggering the appropriate idle, walk, and run animations.
+
+b. InteractionPromptUI.cs (New UI Script)
+
+Responsibility: Provide clear visual feedback to the player about possible interactions.
+
+Functionality:
+
+This UI script should listen for events fired by the PlayerInteractor.
+
+When PlayerInteractor detects an Interactable object, it should fire an event (e.g., GameEvents.OnInteractableDetected).
+
+InteractionPromptUI will subscribe to this event and display a UI prompt on-screen (e.g., "[E] Harvest Plant").
+
+When the PlayerInteractor no longer detects the object, it should fire a corresponding "detection ended" event to hide the UI prompt.
+
+4. Strict Architectural Guidelines
+It is imperative that these new components integrate seamlessly into our existing event-driven architecture.
+
+Maintain Decoupling: The new Player scripts (PlayerController, PlayerInteractor) must remain decoupled from other game systems. They should not have direct references (e.g., CultivationManager.Instance).
+
+Utilize GameEvents: Communication between the new UI and player systems should be handled via the GameEvents manager to maintain low coupling.
+
+Object-centric Responsibility: The responsibility for an interaction's outcome lies with the interacted object, not the player. The player's role is simply to be the trigger of the interaction.
