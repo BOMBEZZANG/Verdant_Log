@@ -1,0 +1,184 @@
+==============================================
+Debug Log Started: 2025-07-27 23:57:48
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Project: Verdant_Log
+==============================================
+
+[23:57:48.321] [LOG    ] Debug log started: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-57-48.txt
+[23:57:48.321] [LOG    ] === INTERACTION SYSTEM DEBUG ===
+[23:57:48.322] [LOG    ] [InteractionDebug] === INTERACTION SYSTEM DEBUG ===
+[23:57:48.323] [LOG    ] Debug started at: 7/27/2025 11:57:48 PM
+[23:57:48.323] [LOG    ] [InteractionDebug] Debug started at: 7/27/2025 11:57:48 PM
+[23:57:48.323] [LOG    ] 
+[23:57:48.323] [LOG    ] [InteractionDebug] 
+[23:57:48.324] [LOG    ] ---------- PLAYER DEBUG ----------
+[23:57:48.324] [LOG    ] [InteractionDebug] ---------- PLAYER DEBUG ----------
+[23:57:48.325] [LOG    ] Player found: Player
+[23:57:48.325] [LOG    ] [InteractionDebug] Player found: Player
+[23:57:48.325] [LOG    ] Player position: (0.00, 0.00, 0.00)
+[23:57:48.325] [LOG    ] [InteractionDebug] Player position: (0.00, 0.00, 0.00)
+[23:57:48.326] [LOG    ] Player active: True
+[23:57:48.326] [LOG    ] [InteractionDebug] Player active: True
+[23:57:48.326] [LOG    ] PlayerInteractor found
+[23:57:48.326] [LOG    ] [InteractionDebug] PlayerInteractor found
+[23:57:48.326] [LOG    ] Interaction range: 2
+[23:57:48.326] [LOG    ] [InteractionDebug] Interaction range: 2
+[23:57:48.326] [LOG    ] Interactable layer mask: 64 (Interactable)
+[23:57:48.327] [LOG    ] [InteractionDebug] Interactable layer mask: 64 (Interactable)
+[23:57:48.327] [LOG    ] Player has 1 collider(s)
+[23:57:48.327] [LOG    ] [InteractionDebug] Player has 1 collider(s)
+[23:57:48.327] [LOG    ]   - CapsuleCollider2D: isTrigger=False, enabled=True
+[23:57:48.327] [LOG    ] [InteractionDebug]   - CapsuleCollider2D: isTrigger=False, enabled=True
+[23:57:48.327] [LOG    ] 
+[23:57:48.328] [LOG    ] [InteractionDebug] 
+[23:57:48.328] [LOG    ] ---------- INTERACTABLE OBJECTS ----------
+[23:57:48.328] [LOG    ] [InteractionDebug] ---------- INTERACTABLE OBJECTS ----------
+[23:57:48.328] [LOG    ] Found 1 Interactable components
+[23:57:48.328] [LOG    ] [InteractionDebug] Found 1 Interactable components
+[23:57:48.328] [LOG    ] Found 1 ItemPickup components
+[23:57:48.328] [LOG    ] [InteractionDebug] Found 1 ItemPickup components
+[23:57:48.328] [LOG    ] 
+[23:57:48.329] [LOG    ] [InteractionDebug] 
+[23:57:48.329] [LOG    ] --- INTERACTABLE: 4_Clova_SeedPickup ---
+[23:57:48.329] [LOG    ] [InteractionDebug] --- INTERACTABLE: 4_Clova_SeedPickup ---
+[23:57:48.330] [LOG    ] Position: (5.00, 3.00, 0.00)
+[23:57:48.330] [LOG    ] [InteractionDebug] Position: (5.00, 3.00, 0.00)
+[23:57:48.330] [LOG    ] Active: True
+[23:57:48.330] [LOG    ] [InteractionDebug] Active: True
+[23:57:48.330] [LOG    ] Layer: 6 (Interactable)
+[23:57:48.330] [LOG    ] [InteractionDebug] Layer: 6 (Interactable)
+[23:57:48.330] [LOG    ] Colliders: 1
+[23:57:48.330] [LOG    ] [InteractionDebug] Colliders: 1
+[23:57:48.330] [LOG    ]   - BoxCollider2D:
+[23:57:48.330] [LOG    ] [InteractionDebug]   - BoxCollider2D:
+[23:57:48.330] [LOG    ]     * isTrigger: True
+[23:57:48.330] [LOG    ] [InteractionDebug]     * isTrigger: True
+[23:57:48.330] [LOG    ]     * enabled: True
+[23:57:48.330] [LOG    ] [InteractionDebug]     * enabled: True
+[23:57:48.330] [LOG    ]     * bounds: Center: (5.00, 3.00, 0.00), Extents: (0.50, 0.70, 0.00)
+[23:57:48.330] [LOG    ] [InteractionDebug]     * bounds: Center: (5.00, 3.00, 0.00), Extents: (0.50, 0.70, 0.00)
+[23:57:48.332] [LOG    ]     * size: (1.00, 1.41)
+[23:57:48.332] [LOG    ] [InteractionDebug]     * size: (1.00, 1.41)
+[23:57:48.332] [LOG    ]     * offset: (0.00, 0.00)
+[23:57:48.332] [LOG    ] [InteractionDebug]     * offset: (0.00, 0.00)
+[23:57:48.333] [LOG    ] Distance to player: 5.83
+[23:57:48.333] [LOG    ] [InteractionDebug] Distance to player: 5.83
+[23:57:48.333] [LOG    ] Has ItemPickup component
+[23:57:48.333] [LOG    ] [InteractionDebug] Has ItemPickup component
+[23:57:48.333] [LOG    ] 
+[23:57:48.333] [LOG    ] [InteractionDebug] 
+[23:57:48.333] [LOG    ] --- ITEM PICKUP: 4_Clova_SeedPickup ---
+[23:57:48.333] [LOG    ] [InteractionDebug] --- ITEM PICKUP: 4_Clova_SeedPickup ---
+[23:57:48.334] [LOG    ] Position: (5.00, 3.00, 0.00)
+[23:57:48.334] [LOG    ] [InteractionDebug] Position: (5.00, 3.00, 0.00)
+[23:57:48.334] [LOG    ] Active: True
+[23:57:48.334] [LOG    ] [InteractionDebug] Active: True
+[23:57:48.334] [LOG    ] Item Data: 4_Clova_Seeds (VerdantLog.Data.ItemData)
+[23:57:48.335] [LOG    ] [InteractionDebug] Item Data: 4_Clova_Seeds (VerdantLog.Data.ItemData)
+[23:57:48.335] [LOG    ] Quantity: 1
+[23:57:48.335] [LOG    ] [InteractionDebug] Quantity: 1
+[23:57:48.335] [LOG    ] Has Interactable component
+[23:57:48.335] [LOG    ] [InteractionDebug] Has Interactable component
+[23:57:48.335] [LOG    ] 
+[23:57:48.335] [LOG    ] [InteractionDebug] 
+[23:57:48.335] [LOG    ] ---------- TARGET OBJECTS ----------
+[23:57:48.335] [LOG    ] [InteractionDebug] ---------- TARGET OBJECTS ----------
+[23:57:48.337] [LOG    ] --- SPECIFIC OBJECT: 4_Clova_SeedPickup ---
+[23:57:48.337] [LOG    ] [InteractionDebug] --- SPECIFIC OBJECT: 4_Clova_SeedPickup ---
+[23:57:48.337] [LOG    ] Position: (5.00, 3.00, 0.00)
+[23:57:48.337] [LOG    ] [InteractionDebug] Position: (5.00, 3.00, 0.00)
+[23:57:48.337] [LOG    ] Active: True
+[23:57:48.337] [LOG    ] [InteractionDebug] Active: True
+[23:57:48.337] [LOG    ] Layer: 6 (Interactable)
+[23:57:48.337] [LOG    ] [InteractionDebug] Layer: 6 (Interactable)
+[23:57:48.337] [LOG    ] Tag: Interactable
+[23:57:48.337] [LOG    ] [InteractionDebug] Tag: Interactable
+[23:57:48.338] [LOG    ] Components (5):
+[23:57:48.338] [LOG    ] [InteractionDebug] Components (5):
+[23:57:48.338] [LOG    ]   - Transform
+[23:57:48.338] [LOG    ] [InteractionDebug]   - Transform
+[23:57:48.338] [LOG    ]   - SpriteRenderer
+[23:57:48.338] [LOG    ] [InteractionDebug]   - SpriteRenderer
+[23:57:48.338] [LOG    ]   - ItemPickup
+[23:57:48.338] [LOG    ] [InteractionDebug]   - ItemPickup
+[23:57:48.338] [LOG    ]   - Interactable
+[23:57:48.338] [LOG    ] [InteractionDebug]   - Interactable
+[23:57:48.338] [LOG    ]   - BoxCollider2D
+[23:57:48.338] [LOG    ] [InteractionDebug]   - BoxCollider2D
+[23:57:48.338] [LOG    ] Collider Details:
+[23:57:48.338] [LOG    ] [InteractionDebug] Collider Details:
+[23:57:48.338] [LOG    ]   - BoxCollider2D: trigger=True, enabled=True
+[23:57:48.338] [LOG    ] [InteractionDebug]   - BoxCollider2D: trigger=True, enabled=True
+[23:57:48.339] [LOG    ] Distance to player: 5.83
+[23:57:48.339] [LOG    ] [InteractionDebug] Distance to player: 5.83
+[23:57:48.340] [LOG    ] Raycast hit: Player
+[23:57:48.340] [LOG    ] [InteractionDebug] Raycast hit: Player
+[23:57:48.340] [LOG    ] Object blocked by: Player
+[23:57:48.340] [LOG    ] [InteractionDebug] Object blocked by: Player
+[23:57:48.340] [LOG    ] 
+[23:57:48.340] [LOG    ] [InteractionDebug] 
+[23:57:48.340] [LOG    ] === DEBUG COMPLETE ===
+[23:57:48.340] [LOG    ] [InteractionDebug] === DEBUG COMPLETE ===
+
+==============================================
+Debug Log Ended: 2025-07-27 23:57:48
+==============================================
+[23:57:48.343] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-57-48.txt
+[23:57:48.345] [LOG    ] === UI Reference Check ===
+[23:57:48.345] [LOG    ] ✓ InventoryUI found on GameObject: UI Manager
+[23:57:48.345] [LOG    ] ✓ InventoryUI.inventoryPanel assigned: Inventory Panel
+[23:57:48.345] [LOG    ]   - Active: False
+[23:57:48.345] [LOG    ]   - ActiveInHierarchy: False
+[23:57:48.346] [LOG    ] ✓ EncyclopediaUI found on GameObject: UI Manager
+[23:57:48.346] [LOG    ] ✓ EncyclopediaUI.encyclopediaPanel assigned: Encyclopedia Panel
+[23:57:48.346] [LOG    ]   - Active: False
+[23:57:48.346] [LOG    ]   - ActiveInHierarchy: False
+[23:57:48.346] [LOG    ] === End UI Reference Check ===
+
+==============================================
+Debug Log Ended: 2025-07-27 23:57:52
+==============================================
+[23:57:52.112] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-57-48.txt
+[23:58:01.016] [LOG    ] Moved player to (3.50, 2.92, 0.00)
+[23:58:01.016] [LOG    ] Seed is at (5.00, 2.92, 0.00)
+[23:58:01.016] [LOG    ] Distance: 1.50 units (interaction range is 2 units)
+[23:58:01.017] [LOG    ] ✓ Player is now within interaction range!
+[23:58:07.166] [LOG    ] === CURRENT DISTANCES ===
+[23:58:07.166] [LOG    ] Player position: (3.50, 2.92, 0.00)
+[23:58:07.166] [LOG    ] Interaction range: 2 units
+[23:58:07.166] [LOG    ] 
+[23:58:07.166] [LOG    ] 4_Clova_SeedPickup: 1.51 units - ✓ IN RANGE
+
+==============================================
+Debug Log Ended: 2025-07-27 23:58:13
+==============================================
+[23:58:13.831] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-57-48.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:58:29
+==============================================
+[23:58:29.681] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-57-48.txt
+[23:58:30.531] [LOG    ] ItemPickup.OnPickup() called for 4_Clova_SeedPickup
+[23:58:30.532] [LOG    ] Attempting to add 1x Lucky_Clova to inventory
+[23:58:30.541] [LOG    ] Successfully added item to inventory
+[23:58:30.545] [LOG    ] Destroying pickup object
+[23:58:30.548] [LOG    ] ItemPickup.OnPickup() called for 4_Clova_SeedPickup
+[23:58:30.548] [LOG    ] Attempting to add 1x Lucky_Clova to inventory
+[23:58:30.550] [LOG    ] Successfully added item to inventory
+[23:58:30.552] [LOG    ] Destroying pickup object
+[23:58:30.553] [LOG    ] Interacted with 4_Clova_SeedPickup
+
+==============================================
+Debug Log Ended: 2025-07-27 23:58:35
+==============================================
+[23:58:35.153] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-57-48.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:58:42
+==============================================
+[23:58:42.771] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-57-48.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:58:42
+==============================================

@@ -1,0 +1,49 @@
+==============================================
+Debug Log Started: 2025-07-27 23:13:21
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Project: Verdant_Log
+==============================================
+
+[23:13:21.892] [LOG    ] DebugFileLogger initialized and ready to capture messages
+[23:13:21.970] [WARNING] DontDestroyOnLoad only works for root GameObjects or components on root GameObjects.
+[23:13:21.972] [LOG    ] ItemDatabase initialized with 1 items
+[23:13:21.973] [WARNING] DontDestroyOnLoad only works for root GameObjects or components on root GameObjects.
+[23:13:21.975] [LOG    ] CultivationManager initialized with 0 seed types
+[23:13:21.979] [LOG    ] WorldManager initialized with 0 zones
+[23:13:21.980] [LOG    ] Encyclopedia initialized with 0 plants
+[23:13:21.982] [LOG    ] All game systems initialized
+[23:13:22.888] [LOG    ] === UI Reference Check ===
+[23:13:22.889] [LOG    ] ✓ InventoryUI found on GameObject: UI Manager
+[23:13:22.889] [LOG    ] ✓ InventoryUI.inventoryPanel assigned: Inventory Panel
+[23:13:22.889] [LOG    ]   - Active: False
+[23:13:22.889] [LOG    ]   - ActiveInHierarchy: False
+[23:13:22.889] [LOG    ] ✓ EncyclopediaUI found on GameObject: UI Manager
+[23:13:22.889] [LOG    ] ✓ EncyclopediaUI.encyclopediaPanel assigned: Encyclopedia Panel
+[23:13:22.889] [LOG    ]   - Active: False
+[23:13:22.891] [LOG    ]   - ActiveInHierarchy: False
+[23:13:22.891] [LOG    ] === End UI Reference Check ===
+
+==============================================
+Debug Log Ended: 2025-07-27 23:13:39
+==============================================
+[23:13:39.537] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\GameSession_2025-07-27_23-13-21.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:13:39
+==============================================
+[23:13:39.576] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\GameSession_2025-07-27_23-13-21.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:14:08
+==============================================
+[23:14:08.410] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\GameSession_2025-07-27_23-13-21.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:14:08
+==============================================
+[23:14:08.617] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\GameSession_2025-07-27_23-13-21.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:14:08
+==============================================

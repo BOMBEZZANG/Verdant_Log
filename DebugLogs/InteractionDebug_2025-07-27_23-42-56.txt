@@ -1,0 +1,50 @@
+==============================================
+Debug Log Started: 2025-07-27 23:42:56
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Project: Verdant_Log
+==============================================
+git
+==============================================
+Debug Log Ended: 2025-07-27 23:42:56
+==============================================
+[23:42:56.039] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-42-56.txt
+[23:42:56.043] [LOG    ] === UI Reference Check ===
+[23:42:56.043] [LOG    ] ✓ InventoryUI found on GameObject: UI Manager
+[23:42:56.043] [LOG    ] ✓ InventoryUI.inventoryPanel assigned: Inventory Panel
+[23:42:56.043] [LOG    ]   - Active: False
+[23:42:56.043] [LOG    ]   - ActiveInHierarchy: False
+[23:42:56.044] [LOG    ] ✓ EncyclopediaUI found on GameObject: UI Manager
+[23:42:56.044] [LOG    ] ✓ EncyclopediaUI.encyclopediaPanel assigned: Encyclopedia Panel
+[23:42:56.044] [LOG    ]   - Active: False
+[23:42:56.044] [LOG    ]   - ActiveInHierarchy: False
+[23:42:56.044] [LOG    ] === End UI Reference Check ===
+
+==============================================
+Debug Log Ended: 2025-07-27 23:43:11
+==============================================
+[23:43:11.931] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-42-56.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:43:24
+==============================================
+[23:43:24.080] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-42-56.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:43:27
+==============================================
+[23:43:27.647] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-42-56.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:43:55
+==============================================
+[23:43:55.666] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-42-56.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:43:55
+==============================================
+[23:43:55.843] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\InteractionDebug_2025-07-27_23-42-56.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 23:43:55
+==============================================

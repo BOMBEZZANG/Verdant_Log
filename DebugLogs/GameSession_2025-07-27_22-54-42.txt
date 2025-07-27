@@ -1,0 +1,39 @@
+==============================================
+Debug Log Started: 2025-07-27 22:54:42
+Unity Version: 6000.0.45f1
+Platform: WindowsEditor
+Project: Verdant_Log
+==============================================
+
+[22:54:42.128] [LOG    ] DebugFileLogger initialized and ready to capture messages
+[22:54:42.203] [WARNING] DontDestroyOnLoad only works for root GameObjects or components on root GameObjects.
+[22:54:42.204] [LOG    ] ItemDatabase initialized with 1 items
+[22:54:42.205] [WARNING] DontDestroyOnLoad only works for root GameObjects or components on root GameObjects.
+[22:54:42.207] [LOG    ] CultivationManager initialized with 0 seed types
+[22:54:42.209] [LOG    ] WorldManager initialized with 0 zones
+[22:54:42.212] [LOG    ] Encyclopedia initialized with 0 plants
+[22:54:42.213] [LOG    ] All game systems initialized
+[22:54:42.522] [LOG    ] === UI Reference Check ===
+[22:54:42.524] [LOG    ] ✓ InventoryUI found on GameObject: UI Manager
+[22:54:42.524] [LOG    ] ✓ InventoryUI.inventoryPanel assigned: Inventory Panel
+[22:54:42.524] [LOG    ]   - Active: False
+[22:54:42.524] [LOG    ]   - ActiveInHierarchy: False
+[22:54:42.524] [LOG    ] ✓ EncyclopediaUI found on GameObject: UI Manager
+[22:54:42.524] [LOG    ] ✓ EncyclopediaUI.encyclopediaPanel assigned: Encyclopedia Panel
+[22:54:42.524] [LOG    ]   - Active: False
+[22:54:42.524] [LOG    ]   - ActiveInHierarchy: False
+[22:54:42.524] [LOG    ] === End UI Reference Check ===
+
+==============================================
+Debug Log Ended: 2025-07-27 22:54:48
+==============================================
+[22:54:48.561] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\GameSession_2025-07-27_22-54-42.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 22:54:48
+==============================================
+[22:54:48.754] [LOG    ] Debug log saved to: C:/Projects/Verdant_Log/Assets\..\DebugLogs\GameSession_2025-07-27_22-54-42.txt
+
+==============================================
+Debug Log Ended: 2025-07-27 22:54:48
+==============================================

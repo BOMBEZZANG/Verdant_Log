@@ -68,6 +68,14 @@ namespace VerdantLog.Utilities
             string formattedMessage = $"[{timestamp}] [{logTypeStr}] {message}";
             
             logBuffer.AppendLine(formattedMessage);
+        }
+        
+        /// <summary>
+        /// Log a message with timestamp and also output to Unity console
+        /// </summary>
+        public static void LogWithConsole(string message, LogType logType = LogType.Log)
+        {
+            Log(message, logType);
             
             // Also log to Unity console
             switch (logType)
@@ -240,6 +248,8 @@ namespace VerdantLog.Utilities
     public class DebugLoggerAutoSave : MonoBehaviour
     {
         private static DebugLoggerAutoSave instance;
+        [SerializeField] private float autoSaveInterval = 30f; // Save every 30 seconds
+        private float lastSaveTime;
         
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         static void Init()
@@ -249,7 +259,36 @@ namespace VerdantLog.Utilities
                 GameObject go = new GameObject("DebugLoggerAutoSave");
                 instance = go.AddComponent<DebugLoggerAutoSave>();
                 DontDestroyOnLoad(go);
+                
+                // Initialize the logger
+                DebugFileLogger.StartNewLog("GameSession");
+                
+                // Hook into Unity's logging system to capture all Debug messages
+                Application.logMessageReceived += OnLogMessageReceived;
+                
+                Debug.Log("DebugFileLogger initialized and ready to capture messages");
             }
+        }
+        
+        private void Start()
+        {
+            lastSaveTime = Time.time;
+        }
+        
+        private void Update()
+        {
+            // Auto-save periodically
+            if (Time.time - lastSaveTime >= autoSaveInterval)
+            {
+                DebugFileLogger.SaveLog();
+                lastSaveTime = Time.time;
+            }
+        }
+        
+        private static void OnLogMessageReceived(string logString, string stackTrace, LogType type)
+        {
+            // Capture all Unity Debug messages automatically
+            DebugFileLogger.Log(logString, type);
         }
         
         private void OnApplicationPause(bool pauseStatus)
@@ -277,6 +316,9 @@ namespace VerdantLog.Utilities
         {
             if (instance == this)
             {
+                // Unsubscribe from Unity logging
+                Application.logMessageReceived -= OnLogMessageReceived;
+                
                 DebugFileLogger.SaveLog();
                 instance = null;
             }

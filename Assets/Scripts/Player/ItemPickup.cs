@@ -59,13 +59,49 @@ namespace VerdantLog.Player
             {
                 interactable.SetInteractionName($"Pick up {itemData.ItemName}");
                 
-                // The onInteract event is serialized, so we'll set it up in the Unity Editor
-                // or use a different approach to connect the interaction
+                // Try to automatically connect using reflection
+                TryAutoConnectInteraction();
+                
+                Debug.Log($"ItemPickup: Set interaction name for {itemData.ItemName}");
             }
+        }
+        
+        private void TryAutoConnectInteraction()
+        {
+            if (interactable == null) return;
+            
+            try
+            {
+                // Use reflection to access the private onInteract field
+                var interactableType = typeof(Interactable);
+                var onInteractField = interactableType.GetField("onInteract", 
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                
+                if (onInteractField != null)
+                {
+                    var onInteractEvent = onInteractField.GetValue(interactable) as UnityEngine.Events.UnityEvent;
+                    if (onInteractEvent != null)
+                    {
+                        // Only add if not already connected
+                        onInteractEvent.RemoveListener(OnPickup); // Remove any duplicates first
+                        onInteractEvent.AddListener(OnPickup);
+                        Debug.Log($"ItemPickup: Auto-connected interaction for {itemData.ItemName}");
+                        return;
+                    }
+                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"Could not auto-connect interaction: {e.Message}");
+            }
+            
+            Debug.LogWarning($"ItemPickup: Could not auto-connect. Please manually connect OnPickup() method in the Interactable's OnInteract event in the Inspector!");
         }
         
         public void OnPickup()
         {
+            Debug.Log($"ItemPickup.OnPickup() called for {gameObject.name}");
+            
             if (itemData == null)
             {
                 Debug.LogWarning("ItemPickup has no ItemData assigned!");
@@ -79,21 +115,27 @@ namespace VerdantLog.Player
                 return;
             }
             
+            Debug.Log($"Attempting to add {quantity}x {itemData.ItemName} to inventory");
+            
             if (inventory.AddItem(itemData.ItemID, quantity))
             {
+                Debug.Log($"Successfully added item to inventory");
                 Core.GameEvents.TriggerNotification($"Picked up {quantity}x {itemData.ItemName}");
                 
                 if (destroyOnPickup)
                 {
+                    Debug.Log($"Destroying pickup object");
                     Destroy(gameObject);
                 }
                 else
                 {
+                    Debug.Log($"Deactivating pickup object");
                     gameObject.SetActive(false);
                 }
             }
             else
             {
+                Debug.LogWarning("Failed to add item - inventory full?");
                 Core.GameEvents.TriggerNotification("Inventory is full!");
             }
         }
